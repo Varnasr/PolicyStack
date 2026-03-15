@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you reference this project, please cite it as below."
+type: software
+title: "PolicyStack"
+abstract: "South Asia policy tracker -- schemes, budgets, and governance data."
+authors:
+  - family-names: "Sri Raman"
+    given-names: "Varna"
+version: 0.1.0
+date-released: "2025-04-28"
+license: MIT
+url: "https://openstacks.dev"
+repository-code: "https://github.com/Varnasr/PolicyStack"
+keywords:
+  - policy tracking
+  - government data
+  - South Asia
+  - budget analysis
