@@ -1,71 +1,126 @@
 # PolicyStack
 
-**South Asia policy tracker — schemes, budgets, and governance data.**
+**Indian government scheme tracker -- budgets, performance, and policy data.**
 
 [![Part of OpenStacks](https://img.shields.io/badge/Part%20of-OpenStacks-blue)](https://openstacks.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Status: Early Stage](https://img.shields.io/badge/Status-Early%20Stage-orange)]()
 
-> Tracking government policies, schemes, and budgets across development sectors in South Asia.
+> Structured, open data on 15 flagship government schemes across health, education, gender, livelihoods, and climate.
 
 ---
 
-## Status
-
-**This repository is just getting started.** The vision is documented below, but implementation has not yet begun. Contributions are welcome.
-
-## Vision
-
-PolicyStack will provide structured, open data on government policies and schemes across South Asia:
-
-- **Scheme tracking** — Central and state government schemes across health, education, gender, and climate
-- **Budget analysis** — Allocation vs. expenditure data for key programs
-- **Policy mapping** — Which policies address which development challenges
-- **Implementation status** — Progress tracking against stated targets
-
-### Potential Data Sources
-
-- Union Budget documents (indiabudget.gov.in)
-- State budget portals
-- NITI Aayog dashboards
-- Ministry annual reports
-- RTI responses and parliamentary questions
-- Open Government Data Platform (data.gov.in)
-
-### Planned Structure
+## What's Inside
 
 ```
 PolicyStack/
 ├── data/
-│   ├── schemes/        # Scheme metadata and coverage
-│   ├── budgets/        # Budget allocation data
-│   └── indicators/     # Implementation indicators
+│   ├── schemes/           # 15 flagship scheme metadata (CSV)
+│   ├── budgets/           # 4-year budget allocation and spending data
+│   └── indicators/        # Scheme performance indicators with baselines
 ├── scripts/
-│   ├── scrapers/       # Data collection scripts
-│   └── analysis/       # Analysis templates
+│   ├── analysis/          # Budget analysis and scheme scorecard scripts
+│   └── scrapers/          # Templates for parsing budget PDFs and dashboards
 ├── docs/
-│   └── methodology.md  # Data collection methodology
-└── sample_data/        # Example datasets
+│   └── methodology.md     # Data collection methodology and standards
+└── requirements.txt       # Python dependencies
 ```
 
-## How to Contribute
+## Data Coverage
 
-This is a great repo to contribute to if you have experience with:
-- Indian government policy and budget data
-- Web scraping government portals
-- Policy analysis and public finance
-- Data journalism
+### 15 Flagship Schemes
 
-See the [OpenStacks hub](https://github.com/Varnasr/OpenStacks-for-Change) for ecosystem-wide contribution guidelines.
+| Sector | Schemes |
+|--------|---------|
+| Health | Ayushman Bharat (PM-JAY), POSHAN Abhiyaan, National Health Mission |
+| WASH | Swachh Bharat Mission, Jal Jeevan Mission |
+| Education | Samagra Shiksha, PM POSHAN (Mid-Day Meal), Skill India |
+| Gender | Beti Bachao Beti Padhao, DAY-NRLM |
+| Livelihoods | MGNREGA, PM-KISAN, PMAY-Gramin, PMAY-Urban |
+| Climate | National Clean Air Programme |
+
+### Budget Data (2020-2024)
+
+4 years of budget data for each scheme:
+- **Allocated** -- Budget Estimate from Union Budget
+- **Revised** -- Revised Estimate (mid-year adjustment)
+- **Spent** -- Actual expenditure
+- **Utilization rate** -- Spent / Allocated (%)
+
+### Performance Indicators
+
+Baseline vs. latest values for key outcome indicators per scheme, with direction (higher/lower is better) and data source.
+
+## Analysis Scripts
+
+### Budget Analysis
+```bash
+python scripts/analysis/budget_analysis.py
+```
+Outputs:
+- Sector-wise spending summary
+- Top schemes ranked by allocation
+- Budget trend charts (per scheme)
+- Utilization heatmap across all schemes and years
+
+### Scheme Performance Scorecard
+```bash
+python scripts/analysis/scheme_performance.py
+```
+Outputs:
+- Indicator progress (baseline to latest, improving/worsening)
+- Composite scorecard combining budget utilization and outcome indicators
+
+### Scraper Templates
+- `budget_pdf_parser.py` -- Template for extracting tables from Union Budget PDFs
+- `scheme_dashboard_scraper.py` -- Patterns for fetching data from government dashboard APIs
+
+## Getting Started
+
+```bash
+pip install -r requirements.txt
+python scripts/analysis/budget_analysis.py
+python scripts/analysis/scheme_performance.py
+```
+
+## Data Sources
+
+| Source | URL | Data |
+|--------|-----|------|
+| Union Budget | indiabudget.gov.in | Budget allocations |
+| MGNREGA MIS | nrega.nic.in | Employment days, wages |
+| JJM Dashboard | ejalshakti.gov.in | Tap connections |
+| PM-KISAN | pmkisan.gov.in | Beneficiaries |
+| NHA Dashboard | pmjay.gov.in | Hospital admissions |
+| NFHS-5 | rchiips.org/nfhs | Health/nutrition outcomes |
+| UDISE+ | udiseplus.gov.in | Education indicators |
+
+See [docs/methodology.md](docs/methodology.md) for full methodology and data standards.
 
 ## How It Connects
 
-PolicyStack is a domain-specific stack in the [OpenStacks](https://openstacks.dev) ecosystem. It will use tools from [EquityStack](https://github.com/Varnasr/EquityStack) (Python analysis) and [FieldStack](https://github.com/Varnasr/FieldStack) (R analysis) for data processing.
+PolicyStack is a domain-specific stack in the [OpenStacks](https://openstacks.dev) ecosystem:
+
+| Stack | Role |
+|-------|------|
+| [RootStack](https://github.com/Varnasr/RootStack) | Database with scheme data (PostgreSQL) |
+| [BridgeStack](https://github.com/Varnasr/BridgeStack) | API serving scheme and budget data |
+| [EquityStack](https://github.com/Varnasr/EquityStack) | Python analysis workflows |
+| **PolicyStack** (this repo) | Source data, scrapers, and policy analysis |
+
+## Contributing
+
+Areas where contributions are welcome:
+- Adding state-level budget disaggregation
+- New scheme datasets
+- Scraper scripts for government portals
+- Data journalism and analysis notebooks
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) or open an issue.
 
 ## License
 
-MIT — free to use, modify, and share. See [LICENSE](LICENSE).
+MIT -- free to use, modify, and share. See [LICENSE](LICENSE).
 
 ---
 
-**Created by [Varna Sri Raman](https://github.com/Varnasr)** — Development Economist & Social Researcher
+**Created by [Varna Sri Raman](https://github.com/Varnasr)** -- Development Economist & Social Researcher

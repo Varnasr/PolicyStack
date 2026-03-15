@@ -1,0 +1,17 @@
+scheme_id,indicator_name,baseline_year,baseline_value,latest_year,latest_value,unit,source,direction
+mgnrega,Average days of employment per household,2015,40,2023,48,days,MGNREGA MIS,higher_better
+mgnrega,Women participation rate,2015,54.8,2023,57.2,percent,MGNREGA MIS,higher_better
+mgnrega,Delayed wage payments (>15 days),2015,45,2023,28,percent,CAG Audit Reports,lower_better
+pmkisan,Beneficiaries (cumulative),2019,0,2023,110000000,count,PM-KISAN Portal,higher_better
+pmjay,Hospital admissions (cumulative),2018,0,2023,58000000,count,NHA Dashboard,higher_better
+pmjay,Empanelled hospitals,2018,0,2023,28000,count,NHA Dashboard,higher_better
+sbm,Household toilets built (cumulative),2014,0,2023,120000000,count,SBM Dashboard,higher_better
+sbm,ODF-declared villages,2014,0,2023,600000,count,SBM Dashboard,higher_better
+jjm,Functional household tap connections,2019,17,2023,75,percent,JJM Dashboard,higher_better
+poshan,Stunting rate (under-5),2016,38.4,2021,35.5,percent,NFHS-5,lower_better
+poshan,Anaemia in children 6-59 months,2016,58.6,2021,67.1,percent,NFHS-5,lower_better
+samagra,Gross Enrolment Ratio (secondary),2018,76.9,2022,79.6,percent,UDISE+,higher_better
+mdm,Children covered (daily average),2015,100000000,2023,118000000,count,PM POSHAN Dashboard,higher_better
+bbbp,Sex ratio at birth (selected districts),2015,918,2023,934,per 1000 males,Civil Registration System,higher_better
+nrlm,Women in SHGs (cumulative),2011,0,2023,90000000,count,DAY-NRLM MIS,higher_better
+ncap,Cities showing PM2.5 improvement,2019,0,2023,89,count,CPCB Monitoring,higher_better
