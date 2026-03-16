@@ -6,3 +6,13 @@ __pycache__/
 dist/
 build/
 .ipynb_checkpoints/
+
+# Added by git standards propagation
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+coverage/
+.vscode/
+.idea/
+*.swp
