@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check Python syntax
+        run: python -m py_compile $(find . -name "*.py" -not -path "./.git/*") || true
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --accept 200,204,301,302,403,429 --exclude-mail --exclude "localhost|127.0.0.1|example.com|twitter.com|x.com|linkedin.com" --timeout 30 --max-retries 2 "**/*.md"
+          fail: false
