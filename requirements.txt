@@ -1,6 +1,6 @@
 pandas>=2.0
 openpyxl>=3.1
 requests>=2.31
-beautifulsoup4>=4.12
+beautifulsoup4>=4.14.3
 matplotlib>=3.8
 seaborn>=0.13
