@@ -4,8 +4,16 @@
 
 [![Part of OpenStacks](https://img.shields.io/badge/Part%20of-OpenStacks-blue)](https://openstacks.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status: Stable](https://img.shields.io/badge/Status-Stable-0969da?style=flat-square)](https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md)
 
 > Structured, open data on 15 flagship government schemes across health, education, gender, livelihoods, and climate.
+
+> **Status: Stable.** This repository works and is correct, but it is not under active
+> development. Bug reports are welcome and issues stay open; new features are unlikely,
+> and replies are measured in weeks rather than days. Dependencies are pinned deliberately
+> so that a clone still runs years from now. For **new** policy-tracking work, use
+> [PolicyDhara](https://github.com/Varnasr/PolicyDhara), which auto-updates and is actively
+> developed; this repository holds the original static dataset. See the [maintenance policy](https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md).
 
 ---
 
@@ -115,7 +123,7 @@ Areas where contributions are welcome:
 - Scraper scripts for government portals
 - Data journalism and analysis notebooks
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) or open an issue.
+See [contributing guidelines](https://github.com/Varnasr/.github/blob/main/CONTRIBUTING.md) or open an issue.
 
 ## License
 

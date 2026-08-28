@@ -6,8 +6,8 @@ abstract: "South Asia policy tracker -- schemes, budgets, and governance data."
 authors:
   - family-names: "Sri Raman"
     given-names: "Varna"
-version: 0.1.0
-date-released: "2025-04-28"
+version: "2026.1.0"
+date-released: "2026-08-28"
 license: MIT
 url: "https://openstacks.dev"
 repository-code: "https://github.com/Varnasr/PolicyStack"
