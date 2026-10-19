@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+# Read-only: this workflow checks the repository and writes nothing back to it.
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -19,5 +23,5 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --accept 200,204,301,302,403,429 --exclude-mail --exclude "localhost|127.0.0.1|example.com|twitter.com|x.com|linkedin.com" --timeout 30 --max-retries 2 "**/*.md"
+          args: --accept 200,204,301,302,403,429 --exclude "localhost|127.0.0.1|example.com|twitter.com|x.com|linkedin.com" --timeout 30 --max-retries 2 "**/*.md"
           fail: false
